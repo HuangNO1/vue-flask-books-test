@@ -3,9 +3,10 @@
     <div class="row">
       <div class="col-sm-10">
         <h1>Books</h1>
-        <hr><br><br>
+        <hr />
+        <br /><br />
         <button type="button" class="btn btn-success btn-sm">Add Book</button>
-        <br><br>
+        <br /><br />
         <table class="table table-hover">
           <thead>
             <tr>
@@ -21,8 +22,12 @@
               <td>bar</td>
               <td>foobar</td>
               <td>
-                <button type="button" class="btn btn-warning btn-sm">Update</button>
-                <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                <button type="button" class="btn btn-warning btn-sm">
+                  Update
+                </button>
+                <button type="button" class="btn btn-danger btn-sm">
+                  Delete
+                </button>
               </td>
             </tr>
           </tbody>

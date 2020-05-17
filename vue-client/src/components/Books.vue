@@ -5,7 +5,14 @@
         <h1>Books</h1>
         <hr />
         <br /><br />
-        <button type="button" class="btn btn-success btn-sm" v-b-modal.book-modal>Add Book</button>
+        <alert :message="message"  v-if="showMessage"></alert>
+        <button
+          type="button"
+          class="btn btn-success btn-sm"
+          v-b-modal.book-modal
+        >
+          Add Book
+        </button>
         <br /><br />
         <table class="table table-hover">
           <thead>
@@ -85,8 +92,12 @@
 </template>
 <script>
 import axios from "axios";
+import Alert from "./Alert";
 
 export default {
+  components: {
+    alert: Alert,
+  },
   data() {
     return {
       books: [],
@@ -95,6 +106,8 @@ export default {
         author: "",
         read: [],
       },
+      message: '',
+      showMessage: false,
     };
   },
   methods: {
@@ -116,6 +129,8 @@ export default {
         .post(path, payload)
         .then(() => {
           this.getBooks();
+          this.message = 'Book added!';
+           this.showMessage = true;
         })
         .catch((error) => {
           // eslint-disable-next-line
